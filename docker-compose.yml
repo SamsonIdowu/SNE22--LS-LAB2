@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webapp:
+    container_name: webapp_st03
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        image_name: webapp_st03
+    image: webapp_st03
+    ports:
+      - "9000:9000"

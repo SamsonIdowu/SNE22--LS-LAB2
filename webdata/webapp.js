@@ -3,21 +3,34 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.send(`
+  <!DOCTYPE html>
   <html>
-  <head>
-  <title> DevSecOps Tool Chain Project (RP1) </title>
-  </head>
-
-    <body style="background-color:LightGray;">  
-    <h1> DevSecOps Tool Chain Project (RP1) </h1>
-      <h3 style="background-color:Yellow;">This project was done by Samson, Ayomide, Rolly and Emeka.</h3>
-
-      <p> Resources used are located at: </p>
-      <p> Jenkins Master: 10.1.1.41 </p>
-      <p> Webserver: 10.1.1.40 </p>
-      <p> Domain Contoller: 10.1.1.50 </p>
-      <p> VMware ESXi server: 10.1.1.210 </p>
-      
+    <head>
+      <title>LS lab 2 - Infrastructure as Code (IaC)</title>
+      <style>
+        body {
+          background-color: black;
+          color: white;
+          font-family: Arial, sans-serif;
+          text-align: center;
+        }
+  
+        button {
+          background-color: white;
+          color: black;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          margin: 10px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>LS lab 2 - Infrastructure as Code (IaC)</h1>
+      <p>This project was done by Samson Idowu as a lab task.</p>
+      <button>Button 1</button>
+      <button>Button 2</button>
     </body>
   </html>
   `);
