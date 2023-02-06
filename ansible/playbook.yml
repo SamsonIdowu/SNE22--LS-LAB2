@@ -2,7 +2,7 @@
   hosts: 52.7.128.188
   become: yes
   tasks:
-    - name: Update apt repository and cache
+    - name: Update the APT Repository
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
 
     - name: Install Git, Docker, and Compose
