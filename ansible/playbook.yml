@@ -13,18 +13,18 @@
           - docker 
 
 - name: Clone Git repository
-  hosts: 18.206.236.239
+  hosts: 52.7.128.188
   become: yes
   tasks:
     - name: Clone Git Repository
-      git: repo=https://github.com/Rolly-M/LS-Lab_2.git dest=/home/ubuntu/LS-Lab_2
+      git: repo=https://github.com/SamsonIdowu/SNE22-LS-LAB2.git dest=/home/ubuntu/SNE22-LS-LAB2
 
-- name: Running the different containers
-  hosts: 18.206.236.239
+- name: Run Application Container
+  hosts: 52.7.128.188
   become: yes
   tasks:
-    - name: Stop previous container exixtence
-      command: docker-compose -f /home/ubuntu/LS-Lab_2/docker-compose.yml down -v
+    - name: Stop Previously Running Container Instance
+      command: docker-compose -f /home/ubuntu/SNE22-LS-LAB2/docker-compose.yml down -v
       
-    - name: Run Docker Compose
-      command: docker-compose -f /home/ubuntu/LS-Lab_2/docker-compose.yml up --build -d
+    - name: Start Container with Docker Compose
+      command: docker-compose -f /home/ubuntu/SNE22-LS-LAB2/docker-compose.yml up -d --build 
