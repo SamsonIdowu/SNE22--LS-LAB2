@@ -1,30 +1,30 @@
 - name: Deploy Git, Docker, and Docker Compose
   hosts: 52.7.128.188
-  become: yes
+  become: true
   tasks:
     - name: Update the APT Repository
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
-
+    //
     - name: Install Git, Docker, and Compose
       apt:
         pkg:
           - git 
           - docker-compose
           - docker 
-
+//
 - name: Clone Git repository
   hosts: 52.7.128.188
-  become: yes
+  become: true
   tasks:
     - name: Clone Git Repository
       git: repo=https://github.com/SamsonIdowu/SNE22-LS-LAB2.git dest=/home/ubuntu/SNE22-LS-LAB2
-
+//
 - name: Run Application Container
   hosts: 52.7.128.188
-  become: yes
+  become: true
   tasks:
     - name: Stop Previously Running Container Instance
       command: docker-compose -f /home/ubuntu/SNE22-LS-LAB2/docker-compose.yml down -v
-      
+    //
     - name: Start Container with Docker Compose
       command: docker-compose -f /home/ubuntu/SNE22-LS-LAB2/docker-compose.yml up -d --build 
