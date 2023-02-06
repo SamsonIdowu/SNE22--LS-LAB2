@@ -42,7 +42,7 @@ resource "aws_default_route_table" "DevOps-Lab-route-table" {
 
 // internet gateway configuration
 resource "aws_internet_gateway" "DevOps-Lab-igw" {
-  vpc_id     = aws_vpc.DevOps-Lab-igw.id
+  vpc_id     = aws_vpc.DevOps-Lab.id
   tags = {
     Name = "${var.env_prefix}-igw"
   }
