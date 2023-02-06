@@ -42,7 +42,7 @@ resource "aws_default_route_table" "DevOps-Lab-route-table" {
 
 // internet gateway configuration
 resource "aws_internet_gateway" "DevOps-Lab-igw" {
-  vpc_id     = aws_vpc.DevOps-Lab-vpc.id
+  vpc_id     = aws_vpc.DevOps-Lab-igw.id
   tags = {
     Name = "${var.env_prefix}-igw"
   }
@@ -102,7 +102,7 @@ resource "aws_instance" "SNE22-LS-Lab2" {
   instance_type = "t2.micro"
 
   vpc_security_group_ids = [ aws_default_security_group.default-sg.id ]
-  subnet_id = aws_subnet.myapp-subnet.id
+  subnet_id = aws_subnet.DevOps-Lab-Subnet.id
   availability_zone = var.avail_zone
   associate_public_ip_address = true
   key_name = aws_key_pair.ssh-key.key_name
