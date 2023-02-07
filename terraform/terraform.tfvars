@@ -1,0 +1,6 @@
+vpc_cidr_bloc = "10.10.0.0/16"
+subnet_cidr_block = "10.10.1.0/24"
+avail_zone = "us-east-1a"
+env_prefix = "LS-Lab"
+myip_address = "193.56.113.34"
+public_key_location = "/home/samson/.ssh/id_rsa.pub"
