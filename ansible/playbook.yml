@@ -1,6 +1,6 @@
 - name: Deploy Git, Docker, and Docker Compose
   hosts:
-    - 52.7.128.188
+    - 52.21.53.17
   become: true
   tasks:
     - name: Update the APT Repository
@@ -16,7 +16,7 @@
 
 - name: Clone Git repository
   hosts:
-    - 52.7.128.188
+    - 52.21.53.17
   become: true
   tasks:
     - name: Clone Git Repository
@@ -26,7 +26,7 @@
 
 - name: Run Application Container
   hosts:
-    - 52.7.128.188
+    - 52.21.53.17
   become: true
   tasks:
     - name: Stop Previously Running Container Instance
@@ -34,4 +34,3 @@
 
     - name: Start Container with Docker Compose
       command: docker-compose -f /home/ubuntu/SNE22-LS-LAB2/docker-compose.yml up -d --build
-
