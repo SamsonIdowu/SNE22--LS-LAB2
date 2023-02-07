@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <h1>LS lab 2 - Infrastructure as Code (IaC)</h1>
-      <p>This project was done by Samson Idowu as a lab task.</p>
+      <p>This project was done by Samson Idowu as a lab task...</p>
       <button>Button 1</button>
       <button>Button 2</button>
     </body>
